@@ -1,0 +1,19 @@
+{
+  "name": "rest-hapi",
+  "version": "1.0.0",
+  "description": "REST",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khaleed/REST-hapi.git"
+  },
+  "author": "Khalid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Khaleed/REST-hapi/issues"
+  },
+  "homepage": "https://github.com/Khaleed/REST-hapi#readme"
+}
