@@ -1,7 +1,7 @@
 {
   "name": "rest-hapi",
   "version": "1.0.0",
-  "description": "REST",
+  "description": "RESTful API that aggregates search results of engines",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Khaleed/REST-hapi/issues"
   },
-  "homepage": "https://github.com/Khaleed/REST-hapi#readme"
+  "homepage": "https://github.com/Khaleed/REST-hapi#readme",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "ddg": "0.0.3",
+    "google": "^1.4.0",
+    "immutable": "^3.7.6"
+  }
 }
