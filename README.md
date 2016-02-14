@@ -3,7 +3,7 @@
 This is an experiment to create a RESTful API that can get accumulative data from
 Google, Yahoo, and DuckDuckGo. It should enable users to search for anything in the three search engines and return total results to user.
 
-## What is RESTful?
+## What is a RESTful API?
 
 RESTful API pretty much works like a normal website. You have a client that makes HTTP requests and a server that returns some data. REST is not specific to the web, it is just design principles.
 
