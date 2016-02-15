@@ -1,14 +1,17 @@
+"use strict";
 
-// pseudo code for the server that should hit 3 APIs
-// and get aggregate results
-// routes - when a get request is made
-app.get('/api', function(req, res) {
-    // redirect client to game room (using dynamic routing)
+let request = require("request");
+let cheerio = require("cheerio");
 
-    //req.query.q
-
-    //result = run3Apis(q)
-
-    //res.send(results)
-
+request('https://news.ycombinator.com/', (error, response, html) => {
+    if (!error && response.statusCode === 200) {
+        // parse returned HTML
+        let $ = cheerio('html');
+        console.log($);
+        // go to each span with class sitebit and grab element above it
+        $('span.sitebit').each(function(i, element) {
+            let a = $(this).prev();
+            console.log(a.text());
+        });
+    }
 });
