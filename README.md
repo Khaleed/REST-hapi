@@ -18,3 +18,5 @@ Looking at past solutions to this sort of problem, I found npm packages that hel
 A server-side API that exposes an endpoint and provides a service to users that want to get aggregated results of Google, Yahoo, and DuckDuckGo.
 
 Hammock Driven Development approach is applied during the entire process of this project. For more information, please refer to Rich Hickey's talk (https://www.youtube.com/watch?v=f84n5oFoZBc).
+
+<a href='http://www.recurse.com' title='Made with love at the Recurse Center'><img src='https://cloud.githubusercontent.com/assets/2883345/11322975/9e575dce-910b-11e5-9f47-1fb1b530a4bd.png' height='75px'/></a>
