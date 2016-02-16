@@ -7,7 +7,7 @@ let Immutable = require('Immutable');
 request('https://news.ycombinator.com', function (error, response, html) {
     if (!error && response.statuscode == 200) {
         let $ = cheerio.load(html);
-        let parsedresults = immutable.list([]);
+        let parsedresults = Immutable.List([]);
         let newparsedresults;
         $('span.comhead').each(function(i, element) {
             let a = $(this).prev();
