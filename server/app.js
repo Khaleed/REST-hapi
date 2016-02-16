@@ -2,7 +2,7 @@
 
 let request = require('request');
 let cheerio = require('cheerio');
-let immutable = require('immutable');
+let Immutable = require('Immutable');
 // get rank, title, url details for HN articles
 request('https://news.ycombinator.com', function (error, response, html) {
     if (!error && response.statuscode == 200) {
