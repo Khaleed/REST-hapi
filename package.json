@@ -19,6 +19,7 @@
   "dependencies": {
     "cheerio": "^0.20.0",
     "ddg": "0.0.3",
+    "express": "^4.13.4",
     "google": "^1.4.0",
     "immutable": "^3.7.6",
     "nightmare": "^2.1.6"
