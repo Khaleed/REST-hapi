@@ -21,4 +21,4 @@ Hammock Driven Development approach is applied during the entire process of this
 
 <a href='http://www.recurse.com' title='Made with love at the Recurse Center'><img src='https://cloud.githubusercontent.com/assets/2883345/11322975/9e575dce-910b-11e5-9f47-1fb1b530a4bd.png' height='75px'/></a>
 
-<iframe src="//giphy.com/embed/BNKVtYZm5nw5O" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/tiger-teeth-roar-BNKVtYZm5nw5O">via GIPHY</a></p>
+<div style="max-width: 500px;" id="_giphy_BNKVtYZm5nw5O"></div><script>var _giphy = _giphy || []; _giphy.push({id: "BNKVtYZm5nw5O",w: 500, h: 281});var g = document.createElement("script"); g.type = "text/javascript"; g.async = true;g.src = ("https:" == document.location.protocol ? "https://" : "http://") + "giphy.com/static/js/widgets/embed.js";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(g, s);</script>
