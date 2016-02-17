@@ -5,12 +5,13 @@ let cheerio = require('cheerio');
 let express = require('express');
 let app = express();
 
-app.get('/hn_front_page', req, res => {
+app.get('/hn_front_page', (req, res) => {
     getResponse((err, result) => {
         if (err) {
+            console.log(err);
             res.status(400).send('Something is broken');
         } else {
-            res.send(JSON.stringify(result));
+            res.end(JSON.stringify(result));
         }
     });
 });
@@ -21,8 +22,8 @@ let getResponse = callback => {
         if (error) {
             console.log('error');
             callback(error);
-        } else if (response.statuscode !== 200) {
-            console.log('try again');
+        } else if (response.statusCode != 200) {
+            console.log(response.statusCode);
             callback(new Error('error try again'));
         } else {
             let $ = cheerio.load(html);
@@ -34,7 +35,7 @@ let getResponse = callback => {
                 let subtext = a.parent().parent().next().children('.subtext').children();
                 let credits = $('.subtext').eq(0).text();
                 let metadata = {
-                    rank: parseint(rank),
+                    rank: +rank,
                     title: title,
                     url: url,
                     credits: credits
