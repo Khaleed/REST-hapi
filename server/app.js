@@ -1,4 +1,3 @@
-
 "use strict";
 
 let cheerio = require('cheerio');
