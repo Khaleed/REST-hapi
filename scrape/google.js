@@ -1,18 +1,16 @@
 "use strict";
 
-// google
 let google = require("google");
-
 google.resultsPerPage = 25;
 let nextCounter = 0;
 
-google('bengal tigers', function (err, next, links) {
+google('bengal tigers', (err, next, links) => {
     if (err) {
         console.error(err);
     } else {
         links.map(link => {
-            console.log(link.title + ' - ' + link.link) // link.href is an alias for link.link
-            console.log(links.description + "\n");
+            console.log(link.title + ' - ' + link.link);
+            console.log(link.description + "\n");
         });
         if (nextCounter < 4) {
             nextCounter += 1
