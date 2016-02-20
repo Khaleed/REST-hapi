@@ -4,9 +4,9 @@ let request = require("request");
 let cheerio = require("cheerio");
 
 // send a request and query to yahoo
-let request("https://yahoo.com", (error, response, html) => {
-    if (err) {
-        console.log(err);
+request("https://yahoo.com", (error, response, html) => {
+    if (error) {
+        console.log(error);
     } else if (response.statusCode !== 200) {
         console.log(response.statusCode);
     } else {
