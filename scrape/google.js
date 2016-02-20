@@ -1,9 +1,9 @@
 "use strict";
 
-let google = require("google");
+let google = require('google');
 google.resultsPerPage = 25;
 
-export function search (query, callback) {
+export function searchGoogle (query, callback) {
     let nextCounter = 0;
     let results = [];
     google(query, (err, next, links) => {
