@@ -21,17 +21,17 @@ let cheerio = require("cheerio");
 // use nightmare
 
 let Nightmare = require("nightmare");
-let nightmare = require({show: true});
+let nightmare = Nightmare({ show: true });
 
 nightmare
-    .goto('http://yahoo.com')
-    .type('input[title="Search"]', 'github nightmare')
-    .click('#uh-search-button')
-    .wait('#main')
+    .goto("https://yahoo.com")
+    .type("input[title='Search']", 'cats') // mimics a user typing in a text box
+    .click("#yschp")
+    .wait("#main")
     .evaluate(function () {
         return document.querySelector('#main .searchCenterMiddle li a').href
     })
     .end()
     .then(function (result) {
-        console.log(result)
+        console.log(result);
     });
