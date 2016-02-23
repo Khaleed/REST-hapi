@@ -19,19 +19,21 @@ let cheerio = require("cheerio");
 // add callback that return data if there is no error
 
 // use nightmare
-
 let Nightmare = require("nightmare");
 let nightmare = Nightmare({ show: true });
 
-nightmare
-    .goto("https://yahoo.com")
-    .type("input[title='Search']", 'cats') // mimics a user typing in a text box
-    .click("#yschp")
-    .wait("#main")
-    .evaluate(function () {
-        return document.querySelector('#main .searchCenterMiddle li a').href
-    })
-    .end()
-    .then(function (result) {
-        console.log(result);
-    });
+// nightmare
+//     .goto("https://yahoo.com")
+//     .type("input[title='Search']", 'cats') // mimics a user typing in a text box
+//     .click("#UHSearchWeb")
+//     .wait("#main")
+//     .evaluate(function () {
+//         return document.querySelector('#main .searchCenterMiddle li a').href
+//     })
+//     .then(function (result) {
+//         console.log(result);
+//     });
+yield Nightmare()
+    .goto('http://yahoo.com')
+    .type('input[title="Search"]', 'Recurse Center')
+    .click('.searchsubmit');
