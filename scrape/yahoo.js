@@ -22,18 +22,14 @@ let cheerio = require("cheerio");
 let Nightmare = require("nightmare");
 let nightmare = Nightmare({ show: true });
 
-// nightmare
-//     .goto("https://yahoo.com")
-//     .type("input[title='Search']", 'cats') // mimics a user typing in a text box
-//     .click("#UHSearchWeb")
-//     .wait("#main")
-//     .evaluate(function () {
-//         return document.querySelector('#main .searchCenterMiddle li a').href
-//     })
-//     .then(function (result) {
-//         console.log(result);
-//     });
-yield Nightmare()
-    .goto('http://yahoo.com')
-    .type('input[title="Search"]', 'Recurse Center')
-    .click('.searchsubmit');
+nightmare
+    .goto("https://yahoo.com")
+    .type("input[title='Search']", 'cats') // mimics a user typing in a text box
+    .click("#UHSearchWeb")
+    .wait("#main")
+    .evaluate(function () {
+        return document.querySelectorAll('#main .searchCenterMiddle li a').href;
+    })
+    .then(function (result) {
+        console.log(result);
+    });
