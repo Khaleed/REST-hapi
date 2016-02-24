@@ -34,14 +34,14 @@ let getResponse = callback => {
                 let url = a.attr('href');
                 let subtext = a.parent().parent().next().children('.subtext').children();
                 let credits = $('.subtext').eq(0).text();
-                let metadata = {
-                    rank: +rank,
+                return {
+                    rank: parseInt(rank),
                     title: title,
                     url: url,
                     credits: credits
                 };
-                callback(null, metadata);
             });
+            callback(null, newparsedresults.get());
         }
     });
 }
