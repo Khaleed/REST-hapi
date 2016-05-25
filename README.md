@@ -1,6 +1,6 @@
 ## Why?
 
-This is an experiment to create a RESTful API that can get accumulative search results from Google, Yahoo, and DuckDuckGo. It should enable users to search for anything in the search engines and get back the top 25 results.
+This is an experiment to create a RESTful API that can get accumulative search results from Google, Yahoo, and DuckDuckGo. It should enable users to search for anything in the search engines and get back the top page 1 results.
 
 ## What is a RESTful API?
 
