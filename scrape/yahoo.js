@@ -1,4 +1,5 @@
 "use strict";
+
 let request = require("request");
 let cheerio = require("cheerio");
 let urls = [];
@@ -13,7 +14,7 @@ request("https://yahoo.com", (error, response, html) => {
         let $searchResults = $(".reg .searchCenterMiddle");
         console.log($searchResults.text());
         let $links = $searchResults.children(".td-u");
-//        console.log($links);
+        //console.log($links);
         let $link = $links.map((i, e) => {
             console.log(e.href);c
         });
@@ -22,25 +23,9 @@ request("https://yahoo.com", (error, response, html) => {
         });
         let metadata = {
             link: $link,
-            titlte : $title
-        }
+            title : $title
+        };
     }
 });
 
 
-// add callback that return data if there is no error
-
-// let Nightmare = require("nightmare");
-// let nightmare = Nightmare({ show: true });
-// let parsedResults = [];
-// nightmare
-//     .goto("https://yahoo.com")
-//     .type("input[title='Search']", 'cats') // mimics a user typing in a text box
-//     .click("#UHSearchWeb")
-//     .wait("#main")
-//     .evaluate(function () {
-//         return document.querySelector('#main .searchCenterMiddle li a').href;
-//     })
-//     .then(function (result) {
-//         console.log(result);
-//     });
