@@ -15,10 +15,8 @@ module.exports = {
         let results = [];
         google(query, (err, next, links) => {
             if (err) {
-                console.log("hi");
                 callback(err);
             } else {
-                console.log("hi callback");
                 let newLinks = links.map(link => {
                     return {
                         title: link.title,
