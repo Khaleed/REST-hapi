@@ -12,7 +12,6 @@ google.resultsPerPage = 25;
 module.exports = {
     searchGoogle: function (query, callback) {
         let nextCounter = 0;
-        let results = [];
         google(query, (err, next, links) => {
             if (err) {
                 callback(err);
