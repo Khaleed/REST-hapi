@@ -2,8 +2,11 @@
 
 let request = require("request");
 let cheerio = require("cheerio");
-let urls = [];
-// send a request and query to yahoo
+
+/**
+ * Searches google given some query
+ * @param {String} query - search query
+ */
 
 module.exports = {
     searchYahoo: function(searchQuery) {
