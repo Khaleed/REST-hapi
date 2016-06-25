@@ -9,5 +9,7 @@
 //     }
 // });
 
-let searchYahoo = require('../scrape/yahoo').searchYahoo;
-searchYahoo('puppies');
+// let searchYahoo = require("../scrape/yahoo").searchYahoo;
+// searchYahoo("puppies");
+let searchBing = require("../scrape/bing.js").searchBing;
+searchBing("tigers");
