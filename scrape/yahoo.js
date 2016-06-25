@@ -10,23 +10,26 @@ let cheerio = require("cheerio");
 
 module.exports = {
     searchYahoo: function(searchQuery) {
-        return request("https://yahoo.com/search?p=" + searchQuery, (error, response, html) => {
+        return request("https://search.yahoo.com/search?p=" + searchQuery, (error, response, html) => {
             if (error) {
                 console.log(error);
             } else if (response.statusCode !== 200) {
                 console.log(response.statusCode);
             } else {
                 let $ = cheerio.load(html);
-                console.log($);
-                let $searchResults = $(".reg.searchCenterMiddle").find(".dd.algo");
+                let $searchResults = $(".reg.searchCenterMiddle").find(".algo");
+                // console.log($searchResults, $searchResults.length);
                 // return an array of search results
-                return $searchResults.map((i, el) => {
+                let result = $searchResults.map((i, el) => {
+                    console.log('am I mapping anything?');
                     return {
-                        title: $(el).find(".title"),
-                        link: $(el).find(".title .td-u").attr("href"),
-                        description: $(el).find(".comText aAbs .p").text()
+                        title: $(el).find(".title").text(),
+                        link: $(el).find(".title .ac-algo").attr("href"),
+                        description: $(el).find(".compText.aAbs p").text()
                     };
                 });
+
+                console.log(result);
             }
         });
     }

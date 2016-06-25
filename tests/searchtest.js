@@ -9,5 +9,5 @@
 //     }
 // });
 
-let searchYahoo = require('./scrape/yahoo').searchYahoo;
+let searchYahoo = require('../scrape/yahoo').searchYahoo;
 searchYahoo('puppies');

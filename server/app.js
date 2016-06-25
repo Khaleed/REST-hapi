@@ -54,5 +54,5 @@ let getResponse = callback => {
             // parse data
         };
         callback(null, metadata);
-    });
+    };
 };
