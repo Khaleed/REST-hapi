@@ -1,7 +1,7 @@
 "use strict";
 
-let request = require("request");
-let cheerio = require("cheerio");
+const request = require("request");
+const cheerio = require("cheerio");
 
 /**
  * Searches google given some query
@@ -28,7 +28,6 @@ module.exports = {
                         description: $(el).find(".compText.aAbs p").text()
                     };
                 });
-
                 console.log(result);
             }
         });
