@@ -1,6 +1,6 @@
 ## Why?
 
-This is an experiment to create a RESTful API that can get accumulative search results from Google, Yahoo, and DuckDuckGo. It should enable users to search for anything in the search engines and get back the top page 1 results.
+This is an experiment to create a RESTful API that can get accumulative search results from Google, Yahoo, and Bing. It should enable users to search for anything in the search engines and get back the top page 1 results.
 
 ## What is a RESTful API?
 
@@ -14,7 +14,7 @@ This project uses Node/Express. The initial approach is to find an API or npm mo
 
 Looking at past solutions to this sort of problem, I found npm packages that help with the scraping of web pages. The results from scraping or parsing data from web pages with Cheerio will not be in the same format as the results shown on the original page. The relevant data will be re-structured to give meaningful results to the user.
 
-Finally, a server-side API is created that exposes an endpoint and provides a service to users that want to get aggregated results of Google, Yahoo, and DuckDuckGo.
+Finally, a server-side API is created that exposes an endpoint and provides a service to users that want to get aggregated results of Google, Yahoo, and Bing.
 
 Hammock Driven Development approach is applied throughout the entire process. For more information, please refer to Rich Hickey's talk (https://www.youtube.com/watch?v=f84n5oFoZBc).
 
