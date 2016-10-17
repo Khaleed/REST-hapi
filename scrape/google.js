@@ -6,8 +6,8 @@ google.resultsPerPage = 25;
 
 /**
  * Searches google given some query
- * @param {String} query - search query
- * @param {Function} callback -std node callback
+ * @param { String } query - The search query
+ * @param { Function } callback - The standard node callback
  */
 module.exports = {
     searchGoogle: function (query, callback) {
