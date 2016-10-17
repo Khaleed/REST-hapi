@@ -4,8 +4,8 @@ const request = require("request");
 const cheerio = require("cheerio");
 
 /**
- * Searches google given some query
- * @param {String} query - search query
+ * Searches Yahoo given some query
+ * @param { String } query - The search query
  */
 
 module.exports = {
@@ -16,12 +16,10 @@ module.exports = {
             } else if (response.statusCode !== 200) {
                 console.log(response.statusCode);
             } else {
-                let $ = cheerio.load(html);
-                let $searchResults = $(".reg.searchCenterMiddle").find(".algo");
-                // console.log($searchResults, $searchResults.length);
-                // return an array of search results
-                let result = $searchResults.map((i, el) => {
-                    console.log('am I mapping anything?');
+                const $ = cheerio.load(html);
+                const $searchResults = $(".reg.searchCenterMiddle").find(".algo");
+                // an array of search results
+                const result = $searchResults.map((i, el) => {
                     return {
                         title: $(el).find(".title").text(),
                         link: $(el).find(".title .ac-algo").attr("href"),
