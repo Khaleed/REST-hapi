@@ -1,7 +1,6 @@
 ## Why?
 
-This is an experiment to create a RESTful API that can get accumulative data from
-Google, Yahoo, and DuckDuckGo. It should enable users to search for anything in the search engines and get back results.
+This is an experiment to create a RESTful API that can get accumulative data from the first page of Hacker News. 
 
 ## What is a RESTful API?
 
