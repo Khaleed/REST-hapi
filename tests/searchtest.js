@@ -1,16 +1,26 @@
 "use strict";
 
-// let searchGoogle = require('./scrape/google').searchGoogle;
-// searchGoogle('sunny places to visit', function(err, result) {
-//     if (err) {
-//         console.log("error");
-//     } else {
-//         console.log(result);
-//     }
-// });
-
+const searchGoogle = require('../scrape/google').searchGoogle;
 const searchYahoo = require("../scrape/yahoo").searchYahoo;
-searchYahoo("puppies");
+const searchBing = require("../scrape/bing.js").searchBing;
 
-// const searchBing = require("../scrape/bing.js").searchBing;
-// searchBing("tigers");
+searchGoogle('sunny places to visit', (err, result) => {
+    if (err) {
+        console.log("error");
+    }
+    console.log(result);
+});
+
+searchYahoo("puppies", (err, result) => {
+    if (err) {
+        console.error("error");
+    }
+    console.log(result);
+});
+
+searchBing("tigers", (err, result) => {
+    if(err) {
+        console.error("error");
+    }
+    console.log(result);
+});
