@@ -9,24 +9,24 @@ const cheerio = require("cheerio");
  */
 
 module.exports = {
-    searchYahoo: function(searchQuery) {
-        return request("https://search.yahoo.com/search?p=" + searchQuery, (error, response, html) => {
+    search: function(query, callback) {
+        return request("https://search.yahoo.com/search?p=" + query, (error, response, html) => {
             if (error) {
-                console.log(error);
+                console.error(error);
             } else if (response.statusCode !== 200) {
                 console.log(response.statusCode);
             } else {
                 const $ = cheerio.load(html);
                 const $searchResults = $(".reg.searchCenterMiddle").find(".algo");
-                // an array of search results
-                const result = $searchResults.map((i, el) => {
-                    return {
+                const $results = [];
+                $searchResults.each((i, el) => {
+                    $results.push({
                         title: $(el).find(".title").text(),
                         link: $(el).find(".title .ac-algo").attr("href"),
                         description: $(el).find(".compText.aAbs p").text()
-                    };
+                    });
                 });
-                console.log(result);
+                callback(null, $results);
             }
         });
     }
