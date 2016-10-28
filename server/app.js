@@ -7,6 +7,11 @@ const express = require('express');
 const async = require('async');
 const app = express();
 
+/**
+ * API that serves up aggregated first page results of google, yahoo, and bing
+ * @param { String } aggregate_search - The end point or path of the server
+ * @param { Function } hanlder - The handler for HTTP get request
+ */
 app.get('/aggregate_search', (req, res) => {
     const query = req.params.query;
     async.parallel([

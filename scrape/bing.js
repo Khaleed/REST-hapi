@@ -5,7 +5,8 @@ const cheerio = require("cheerio");
 
 /**
  * Searches Bing given some query
- * @param { String } query - search query
+ * @param { String } query - The search query
+ * @param { Function } callback - The standard Node callback
  */
 
 module.exports = {
