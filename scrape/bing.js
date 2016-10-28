@@ -5,27 +5,28 @@ const cheerio = require("cheerio");
 
 /**
  * Searches Bing given some query
- * @param {String} query - search query
+ * @param { String } query - search query
  */
 
 module.exports = {
-    searchBing: function (searchQuery) {
-        return request("https://www.bing.com/search?q=" + searchQuery, (error, response, html) => {
+    search: function (query, callback) {
+        return request("https://www.bing.com/search?q=" + query, (error, response, html) => {
             if (error) {
-                console.log(error);
+                console.error(error);
             } else if (response.statusCode !== 200) {
                 console.log(response.statusCode);
             } else {
-                // load cheerio
                 const $ = cheerio.load(html);
-                const searchResults = $("#b_results");
-                const result = searchResults.map((i, el) => {
-                    console.log("mapping");
-                    return {
-                        title: $(el).find("a").text()
-                    };
+                const $searchResults = $("#b_results").find(".b_algo");
+                const $result = [];
+                $searchResults.each((i, el) => {
+                    $result.push({
+                        title: $(el).find("a").text(),
+                        link: $(el).find("a").attr("href"),
+                        description: $(el).find(".b_caption p").text()
+                    }); 
                 });
-                console.log("final result is ", result);
+                callback(null, $result);
             }
         });
     }
