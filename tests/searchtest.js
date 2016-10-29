@@ -1,8 +1,8 @@
 "use strict";
 
-const searchGoogle = require('../scrape/google').searchGoogle;
-const searchYahoo = require("../scrape/yahoo").searchYahoo;
-const searchBing = require("../scrape/bing.js").searchBing;
+const searchGoogle = require('../scrape/google').search;
+const searchYahoo = require("../scrape/yahoo").search;
+const searchBing = require("../scrape/bing.js").search;
 
 /**
  * Searches each search enegine given some query
@@ -25,7 +25,7 @@ searchYahoo("puppies", (err, result) => {
 });
 
 searchBing("tigers", (err, result) => {
-    if(err) {
+    if (err) {
         console.error(err);
     }
     console.log(result);
