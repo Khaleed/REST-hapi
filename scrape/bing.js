@@ -25,7 +25,7 @@ module.exports = {
                         title: $(el).find("a").text(),
                         link: $(el).find("a").attr("href"),
                         description: $(el).find(".b_caption p").text()
-                    }); 
+                    });
                 });
                 callback(null, $result);
             }
