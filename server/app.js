@@ -13,12 +13,16 @@ const app = express();
  * @param { Function } hanlder - The handler for HTTP get request
  */
 app.get('/aggregate_search', (req, res) => {
-    const query = req.params.query;
+    console.log(req);
+    const query = req.query.q;
     async.parallel([
         callback => google.search(query, callback),
         callback => yahoo.search(query, callback),
         callback => bing.search(query, callback)
     ], (err, results) => {
+        if (err) {
+            console.error(err);
+        }
         res.end(JSON.stringify(results));
     });
 });
