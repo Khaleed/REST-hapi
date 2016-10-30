@@ -10,10 +10,9 @@ const app = express();
 /**
  * API that serves up aggregated first page results of google, yahoo, and bing
  * @param { String } aggregate_search - The end point or path of the server
- * @param { Function } hanlder - The handler for HTTP get request
+ * @param { Function } handler - The handler for HTTP get request
  */
 app.get('/aggregate_search', (req, res) => {
-    console.log(req);
     const query = req.query.q;
     async.parallel([
         callback => google.search(query, callback),
